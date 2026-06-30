@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "893131752313",
+    "project_id": "flutter-eas-mobile-apps",
+    "storage_bucket": "flutter-eas-mobile-apps.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893131752313:android:e849130a36065c3082a5a8",
+        "android_client_info": {
+          "package_name": "com.example.eas_apps_mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv228FNqNHBBbp4GIajELs08Chi1vgEbE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
