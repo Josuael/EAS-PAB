@@ -1,6 +1,5 @@
 name: Build Flutter APK
 
-# Script ini akan berjalan otomatis setiap kali kamu nge-push ke branch 'main'
 on:
   push:
     branches:
@@ -8,38 +7,31 @@ on:
 
 jobs:
   build:
-    # Menggunakan OS Ubuntu (Linux) karena proses build Android lebih cepat di sini
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Mengambil kode project kamu dari GitHub
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # <-- Diperbarui ke v4
 
-      # 2. Menginstal Java (dibutuhkan untuk build Android)
       - name: Setup Java
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4 # <-- Diperbarui ke v4
         with:
           distribution: 'zulu'
           java-version: '11'
 
-      # 3. Menginstal Flutter
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
 
-      # 4. Mengambil semua package/dependencies (seperti menjalankan pub get)
       - name: Install Dependencies
         run: flutter pub get
 
-      # 5. Proses pembuatan file APK
       - name: Build APK
         run: flutter build apk --release
 
-      # 6. Mengupload hasil APK ke GitHub agar bisa kamu download
       - name: Upload APK Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4 # <-- Diperbarui ke v4 (Ini solusi errornya)
         with:
           name: flutter-apk-release
           path: build/app/outputs/flutter-apk/app-release.apk
